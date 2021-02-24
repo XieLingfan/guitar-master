@@ -14,7 +14,9 @@ Page({
     token: "",
     windowWidth: 0,
     trackshow: "进行手势识别",
-    access_token:''
+    access_token:'',
+    hand_parts: [],
+    hand_img:""
   },
 
   /**
@@ -91,6 +93,7 @@ Page({
           }
         })
 
+        var img_tmp = res.tempImagePath
         wx.getFileSystemManager().readFile({
           filePath: res.tempImagePath, //选择图片返回的相对路径
           encoding: 'base64', //编码格式
@@ -110,6 +113,11 @@ Page({
               success: function (res) {
                 if(res.data.hand_num > 0) {
                   console.log(res.data);
+                  console.log(img_tmp);
+                  that.setData({
+                    hand_parts : res.data.hand_info[0].hand_parts,
+                    hand_img : img_tmp
+                  })
                 }
                 
                 // if (res.data.error_code === 0) { 

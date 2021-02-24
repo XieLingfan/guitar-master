@@ -4,8 +4,15 @@
   <view class="page-body-wrapper">
     <camera device-position="front" flash="off" binderror="error" style="width:100%;height:{{windowWidth}}px;"></camera>
     <view class="btn-area">
-      <button type="primary" bindtap="track" style='background-color:#31859c;' data-trackshow="{{trackshow}}">{{trackshow}}</button>
+      <button type="primary" bindtap="track" style='background-color:#31859c;'
+        data-trackshow="{{trackshow}}">{{trackshow}}</button>
     </view>
+
+    <view wx:for="{{hand_parts}}">
+      {{index}}     x:{{item.x}};    y:{{item.y}};     score:{{item.score}} 
+    </view>
+    <image wx:if="{{hand_img}}" src="{{hand_img}}"></image>
+    <image src="/images/position.png"></image>
+
   </view>
 </view>
-
