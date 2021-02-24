@@ -1,0 +1,11 @@
+<!--pages/guitar/index.wxml-->
+<!--index.wxml-->
+<view class="page-body">
+  <view class="page-body-wrapper">
+    <camera device-position="front" flash="off" binderror="error" style="width:100%;height:{{windowWidth}}px;"></camera>
+    <view class="btn-area">
+      <button type="primary" bindtap="track" style='background-color:#31859c;' data-trackshow="{{trackshow}}">{{trackshow}}</button>
+    </view>
+  </view>
+</view>
+
