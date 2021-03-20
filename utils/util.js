@@ -1,3 +1,21 @@
+const recognize = function (array, id) {
+  switch(id) {
+    case "0":
+      return case0(array)
+    case "1":
+      return true;
+    case "2":
+      return true;
+    default:
+      return false;
+  }
+}
+
+const case0 = function (array) {
+  return true;
+}
+
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -15,5 +33,10 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime
+  formatTime,
+  recognize
 }
+
+
+
+

@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/guitar/index",
-    "pages/index/index"
+    "pages/chapter/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Guitar Master",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

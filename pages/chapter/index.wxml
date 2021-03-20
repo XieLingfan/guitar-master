@@ -1,0 +1,10 @@
+<!--pages/chapter/index.wxml-->
+
+<view class="container"> 
+  <image class="img" src="{{curSection.imgSrc}}"></image>
+  <text class="content">{{curSection.content}}</text>
+  <!-- <x-button type="warning" width="300" shape="semicircle" class="x-button">开始学习</x-button> -->
+  <x-navi class='navi' bindleft='onPrevious' bindright='onNext' title='{{curSection.title}}' first='{{first}}' latest='{{latest}}' />
+</view>
+
+

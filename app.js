@@ -1,4 +1,8 @@
 // app.js
+import {
+  recognize,
+} from '/utils/util.js'
+
 App({
   onLaunch() {
     // 展示本地存储能力

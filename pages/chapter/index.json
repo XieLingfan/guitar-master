@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "x-navi": "/components/navi/index",
+    "x-button": "/dist/button/index"
+  }
+  
+}

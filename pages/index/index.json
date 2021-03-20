@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-collapse" : "/dist/collapse/index",
+    "l-collapse-item" : "/dist/collapse-item/index",
+    "l-card" : "/dist/card/index"
+  }
 }

@@ -8,7 +8,9 @@
         data-trackshow="{{trackshow}}">{{trackshow}}</button>
     </view>
 
-    <view wx:for="{{hand_parts}}">
+    <text>{{result}}</text>
+
+    <view wx:for="{{hand_parts}}" wx:key="index">
       {{index}}     x:{{item.x}};    y:{{item.y}};     score:{{item.score}} 
     </view>
     <image wx:if="{{hand_img}}" src="{{hand_img}}"></image>

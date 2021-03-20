@@ -1,5 +1,11 @@
 // pages/guitar/index.js
+
+const { recognize } = require("../../utils/util");
+
 var app = getApp();
+
+
+
 Page({
 
   /**
@@ -10,19 +16,20 @@ Page({
     fengmian:"",
     videoSrc:"",
     who:"",
-    openid: "",
-    token: "",
     windowWidth: 0,
     trackshow: "进行手势识别",
     access_token:'',
     hand_parts: [],
-    hand_img:""
+    hand_img:"",
+    result:"正在识别",
+    recognizeId:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.recognizeId = options.recognizeId
     var that = this
     wx.showLoading({
       title: '努力加载中',
@@ -34,11 +41,6 @@ Page({
       windowWidth: sysInfo.windowWidth,
     })
     that.ctx = wx.createCameraContext()
-    console.log("onLoad"),
-      that.setData({
-        openid: app.globalData.openid,
-        token: app.globalData.token
-      });
     
     // 每次更新access_token
     wx.request({
@@ -112,38 +114,26 @@ Page({
                 'content-type': 'application/x-www-form-urlencoded' },
               success: function (res) {
                 if(res.data.hand_num > 0) {
-                  console.log(res.data);
-                  console.log(img_tmp);
-                  that.setData({
-                    hand_parts : res.data.hand_info[0].hand_parts,
-                    hand_img : img_tmp
-                  })
+                  // console.log(res.data);
+                  // console.log(img_tmp);
+                  if(recognize(res.data.hand_info[0].hand_parts,that.data.recognizeId)) {
+                    that.setData({
+                      hand_parts : res.data.hand_info[0].hand_parts,
+                      hand_img : img_tmp,
+                      result: "手势正确"
+                    })
+                  } else {
+                    that.setData({
+                      hand_parts : res.data.hand_info[0].hand_parts,
+                      hand_img : img_tmp,
+                      result: "手势错误"
+                    })
+                  }
+
+                  
+                  
                 }
-                
-                // if (res.data.error_code === 0) { 
-                //   var ctx = wx.createContext()
-                //   ctx.setStrokeStyle('#31859c')
-                //   ctx.lineWidth = 3
-                //   for (let j = 0; j < res.data.result.face_num; j++){
-                //     var cavansl = res.data.result.face_list[j].location.left / takephonewidth * that.data.windowWidth
-                //     var cavanst = res.data.result.face_list[j].location.top / takephoneheight * that.data.windowWidth
-                //     var cavansw = res.data.result.face_list[j].location.width / takephonewidth * that.data.windowWidth
-                //     var cavansh = res.data.result.face_list[j].location.height / takephoneheight * that.data.windowWidth
-                //     ctx.strokeRect(cavansl, cavanst, cavansw, cavansh)
-                //   }
-                //   wx.drawCanvas({
-                //     canvasId: 'canvas',
-                //     actions: ctx.getActions()
-                //   })
-                // } else{
-                // var ctx = wx.createContext()
-                // ctx.setStrokeStyle('#31859c')
-                // ctx.lineWidth = 3
-                // wx.drawCanvas({
-                //   canvasId: 'canvas',
-                //   actions: ctx.getActions()
-                // })
-              // }
+              
               }
             })
 
