@@ -1,9 +1,10 @@
 const recognize = function (array, id) {
+  console.log(array)
   switch(id) {
     case "0":
       return case0(array)
     case "1":
-      return true;
+      return case1(array)
     case "2":
       return true;
     default:
@@ -12,7 +13,17 @@ const recognize = function (array, id) {
 }
 
 const case0 = function (array) {
-  return true;
+  return {
+    is_ok : true,
+    info: "手势正确",
+  }
+}
+
+const case1 = function (array) {
+  return {
+    is_ok : false,
+    info: "其他手指超过了大拇指",
+  }
 }
 
 

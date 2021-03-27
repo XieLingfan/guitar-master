@@ -116,17 +116,18 @@ Page({
                 if(res.data.hand_num > 0) {
                   // console.log(res.data);
                   // console.log(img_tmp);
-                  if(recognize(res.data.hand_info[0].hand_parts,that.data.recognizeId)) {
+                  var tmp = recognize(res.data.hand_info[0].hand_parts,that.data.recognizeId)
+                  if(tmp.is_ok) {
                     that.setData({
                       hand_parts : res.data.hand_info[0].hand_parts,
                       hand_img : img_tmp,
-                      result: "手势正确"
+                      result: tmp.info,
                     })
                   } else {
                     that.setData({
                       hand_parts : res.data.hand_info[0].hand_parts,
                       hand_img : img_tmp,
-                      result: "手势错误"
+                      result: tmp.info,
                     })
                   }
 
