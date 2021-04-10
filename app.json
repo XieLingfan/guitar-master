@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/welcome/index",
+    "pages/choose/index",
     "pages/guitar/index",
     "pages/chapter/index"
   ],

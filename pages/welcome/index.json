@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "x-avatar":"/dist/avatar/index"
+  },
+  "navigationBarBackgroundColor":"#b3d4db"
+} 

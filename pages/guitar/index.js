@@ -21,8 +21,11 @@ Page({
     access_token:'',
     hand_parts: [],
     hand_img:"",
-    result:"正在识别",
-    recognizeId:0
+    res_img:"",
+    result:"准备好后，请点击“进行手势识别”",
+    recognizeId:0,
+    interval:null,
+    isPass:false
   },
 
   /**
@@ -117,16 +120,18 @@ Page({
                   // console.log(res.data);
                   // console.log(img_tmp);
                   var tmp = recognize(res.data.hand_info[0].hand_parts,that.data.recognizeId)
+                  console.log(tmp)
                   if(tmp.is_ok) {
+                    clearInterval(that.interval)
                     that.setData({
-                      hand_parts : res.data.hand_info[0].hand_parts,
-                      hand_img : img_tmp,
+                      trackshow: "进行手势识别",
                       result: tmp.info,
                     })
                   } else {
+                    // clearInterval(that.interval)
                     that.setData({
-                      hand_parts : res.data.hand_info[0].hand_parts,
-                      hand_img : img_tmp,
+                      // hand_parts : res.data.hand_info[0].hand_parts,
+                      res_img : tmp.img,
                       result: tmp.info,
                     })
                   }

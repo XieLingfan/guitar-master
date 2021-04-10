@@ -1,10 +1,12 @@
 <view class="container">
   <view wx:for="{{chapterList}}" wx:key="id">
-    <l-card l-class="card" type="primary" l-img-class="right-card" position="right" image="{{item.imgSrc}}"
-      title="{{item.title}}" bindtap="toChapter" data-index="{{item.id}}">
-      <view class="content">
-        {{item.content}}
-      </view>
-    </l-card>
+      <l-card l-class="card" type="primary" l-img-class="right-card" position="right" image="{{item.imgSrc}}"
+        title="{{item.title}}" bindtap="toChapter" data-index="{{item.id}}">
+        <view class="content">
+          {{item.content}}
+        </view>
+      </l-card>
   </view>
+
+  <l-message />
 </view>

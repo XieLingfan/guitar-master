@@ -6,6 +6,18 @@ import {
 App({
   onLaunch() {
     // 展示本地存储能力
+    try {
+      var value = wx.getStorageSync('chapterStatus')
+      if (!value) {
+        
+        wx.setStorage({
+          key:"chapterStatus",
+          data:[true,false,false,false,false,false],
+        })
+      }
+    } catch (e) {
+      console.log(e);
+    }
 
     // 登录
     wx.login({

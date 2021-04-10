@@ -1,0 +1,64 @@
+/* pages/welcome/welcome.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b3d4db;
+  /* height: 667px; */
+}
+
+.motto {
+  margin-top: 80rpx;
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #405f80;
+}
+
+.journey-container1 {
+  border: 2px solid #405f80;
+  width: 800rpx;
+  height: 280rpx;
+  text-align: center;
+  margin-top: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-container2 {
+  border: 0px solid #405f80;
+  width: 800rpx;
+  height: 280rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-container3 {
+  border: 2px solid #405f80;
+  width: 800rpx;
+  height: 280rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey {
+  font-size: 40rpx;
+  color: #405f80;
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.detail{
+  font-size: 30rpx;
+  color: #405f80;
+  line-height: 80rpx;
+}
+
+page {
+  background-color: #b3d4db;
+}

@@ -1,0 +1,22 @@
+<!--pages/choose/index.wxml-->
+
+<view class="container">
+	<text class="motto">请先选择您的吉他水平</text>
+	<!-- <button></button> -->
+  <view bind:tap="onTap1" class="journey-container1">
+    <text  class="journey">我是新手</text>
+    <text  class="detail">适合对吉他弹奏一无所知的人群</text>
+  </view>
+  <view bind:tap="onTap2" class="journey-container2">
+    <text  class="journey">我是老手</text>
+    <text  class="detail">适合对吉他弹奏有一定了解的人群</text>
+  </view>
+  <view bind:tap="onTap3" class="journey-container3">
+    <text  class="journey">我是大神</text>
+    <text  class="detail">适合对吉他弹奏十分熟悉的人群</text>
+  </view>
+</view>
+
+<!-- flex 容器布局 -->
+<!-- 路由API -->
+<!-- 事件的回调函数 -->

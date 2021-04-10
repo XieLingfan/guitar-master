@@ -1,0 +1,14 @@
+
+<view class="container">
+	<!-- <image class="avatar" src="/images/avatar/1.png"></image> -->
+  <x-avatar x-text-class="x-avatar-text" class="x-avatar" placement="bottom" open-data="{{['userAvatarUrl','userNickName']}}" size="180"/>
+	<text class="motto">Hello, Guitar learner</text>
+	<!-- <button></button> -->
+  <view bind:tap="onTap" class="journey-container">
+    <text  class="journey">开启吉他之旅</text>
+  </view>
+</view>
+
+<!-- flex 容器布局 -->
+<!-- 路由API -->
+<!-- 事件的回调函数 -->
