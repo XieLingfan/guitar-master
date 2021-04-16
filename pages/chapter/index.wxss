@@ -10,15 +10,15 @@ page{ height:105%;}
 
 .img{
   width: 500rpx;
-  height: 500rpx;
-  margin-top: 160rpx;
+  height: 350rpx;
+  margin-top: 300rpx;
 }
 
 .content{
   width: 500rpx;
   margin-top: 80rpx;
   color: #555;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .x-button{
